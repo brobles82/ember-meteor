@@ -3,11 +3,11 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-  api.use('handlebars', 'client');
+  api.use('ember-handlebars', 'client');
 
-  api.add_files('ember.js', 'client', { raw: true });
+  api.add_files('ember.js', 'client');
 
-  // api.exportSymbol('Ember', where);
+  api.exportSymbol('Ember', where);
 });
 
 Package.on_test(function (api) {

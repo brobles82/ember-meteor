@@ -4,9 +4,8 @@ Package.describe({
 
 Package.on_use(function (api, where) {
 
-  api.add_files('handlebars.js', 'client', { raw: true });
+  api.add_files('handlebars.js', 'client');
 
-  // api.exportSymbol('Handlebars', 'client');
 });
 
 Package.on_test(function (api) {
