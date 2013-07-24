@@ -36,26 +36,30 @@ Meteor.methods({
   }
 });
 
-Meteor.startup(function () {
-  if (TodosModel.find().count() < 1) {
-    Meteor._debug('Adding some fixtures');
-    // Add some fixtures
-    var t = [
-      {
-        title: 'Learn Ember.js',
-        isCompleted: true
-      },
-      {
-        title: '...',
-        isCompleted: false
-      },
-      {
-        title: 'Profit!',
-        isCompleted: false
-      }
-    ];
-    _.each(t, function (doc) {
-      TodosModel.insert(doc);
-    });
-  }
-});
+if (Meteor.isServer) {
+
+  Meteor.startup(function () {
+    if (TodosModel.find().count() < 1) {
+      Meteor._debug('Adding some fixtures');
+      // Add some fixtures
+      var t = [
+        {
+          title: 'Learn Ember.js',
+          isCompleted: true
+        },
+        {
+          title: '...',
+          isCompleted: false
+        },
+        {
+          title: 'Profit!',
+          isCompleted: false
+        }
+      ];
+      _.each(t, function (doc) {
+        TodosModel.insert(doc);
+      });
+    }
+  });
+  
+}
