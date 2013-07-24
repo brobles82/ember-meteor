@@ -53,7 +53,7 @@ var define, requireModule;
   @class DS
   @static
 */
-
+// @export DS
 window.DS = Ember.Namespace.create({
   VERSION: '0.13'
 });
