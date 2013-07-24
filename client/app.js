@@ -84,6 +84,8 @@ Todos.TodoController = Ember.ObjectController.extend({
   },
 
   acceptChanges: function () {
+    if (this.get('model').get('isSaving')) return;
+
     this.set('isEditing', false);
     this.get('model').save();
   },
