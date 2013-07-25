@@ -10,3 +10,4 @@ preserve-inputs
 ember-handlebars
 ember
 ember-data
+ember-precompile
