@@ -1,45 +1,36 @@
-// TodosModel - Todos makes a better name, but it's taken
-// TODO move this to the server
-// TODO change name to Todos
-TodosModel = new Meteor.Collection('todos');
+Todos = new Meteor.Collection('todos');
 
 Meteor.methods({
   'Todo.find': function (selector, options) {
     // perform checks
 
     // Be sure to call .fetch() to return the records
-    return TodosModel.find(selector, options).fetch();
-  },
-
-  'Todo.findOne': function (selector, options) {
-    // perform checks
-
-    return TodosModel.findOne(selector, options);
+    return Todos.find(selector, options).fetch();
   },
 
   'Todo.insert': function (doc, options) {
     // perform checks
 
-    return TodosModel.insert(doc);
+    return Todos.insert(doc);
   },
 
   'Todo.update': function (selector, modifier, options) {
     // perform checks
 
-    return TodosModel.update(selector, modifier, options);
+    return Todos.update(selector, modifier, options);
   },
 
   'Todo.remove': function (selector) {
     // perform checks
 
-    return TodosModel.remove(selector);
+    return Todos.remove(selector);
   }
 });
 
 if (Meteor.isServer) {
 
   Meteor.startup(function () {
-    if (TodosModel.find().count() < 1) {
+    if (Todos.find().count() < 1) {
       Meteor._debug('Adding some fixtures');
       // Add some fixtures
       var t = [
@@ -57,7 +48,7 @@ if (Meteor.isServer) {
         }
       ];
       _.each(t, function (doc) {
-        TodosModel.insert(doc);
+        Todos.insert(doc);
       });
     }
   });
