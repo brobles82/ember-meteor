@@ -5,10 +5,10 @@
 var fs = Npm.require('fs');
 var vm = Npm.require('vm');
 var path = Npm.require('path');
-var jQuery = Npm.require('jquery');
 
 
 var getBaseSandbox = function () {
+  var jQuery = fs.readFileSync('packages/jquery/jquery.js', 'utf8');
 
   //dummy jQuery
   jQuery = function () { return jQuery };
