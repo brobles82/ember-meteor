@@ -7,6 +7,10 @@ Todos.Router.map(function () {
   });
 });
 
+Todos.Router.reopen({
+  location: 'history'
+});
+
 Todos.TodosRoute = Ember.Route.extend({
   model: function () {
     return Todos.Todo.find();

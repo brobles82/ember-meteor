@@ -6,6 +6,7 @@
 autopublish
 insecure
 preserve-inputs
+spiderable
 
 ember-handlebars
 ember
