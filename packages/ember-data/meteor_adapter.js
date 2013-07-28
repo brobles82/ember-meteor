@@ -53,9 +53,18 @@ DS.MeteorAdapter = DS.Adapter.extend({
     });
   },
 
-  // TODO
-  // findQuery: function(store, type, query, array) {
-  // },
+  findQuery: function(store, type, query, array) {
+    var adapter = this;
+
+    var methodName = adapter.methodForType(type, 'find');
+    Meteor.call(methodName, query, {}, function (err, result) {
+      if (err) {
+        adapter.didError(store, type, array, err.message);
+        throw new Error(err.message);
+      }
+      adapter.didFindQuery(store, type, result, array);
+    });
+  },
 
   createRecord: function(store, type, record) {
     var adapter = this;
