@@ -1,4 +1,3 @@
-
 var path = Npm.require('path');
 
 var compileTemplate = function (compileStep) {
