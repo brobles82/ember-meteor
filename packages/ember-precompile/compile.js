@@ -8,7 +8,7 @@ var path = Npm.require('path');
 
 
 var getBaseSandbox = function () {
-  var jQuery = fs.readFileSync('packages/jquery/jquery.js', 'utf8');
+  var jQuery = fs.readFileSync('packages/ember/bower_components/jquery/jquery.js', 'utf8');
 
   //dummy jQuery
   jQuery = function () { return jQuery };
@@ -54,8 +54,8 @@ var getBaseSandbox = function () {
 }
 
 var getContext = function (sandboxExtras){
-  var HANDLEBARSJS = fs.readFileSync('packages/ember-handlebars/handlebars.js', 'utf8');
-  var EMBERJS = fs.readFileSync('packages/ember/ember.js', 'utf8');
+  var HANDLEBARSJS = fs.readFileSync('packages/ember/bower_components/handlebars/handlebars.js', 'utf8');
+  var EMBERJS = fs.readFileSync('packages/ember/bower_components/ember/ember.js', 'utf8');
 
   sandbox = getBaseSandbox();
   sandboxExtras = sandboxExtras || {};
