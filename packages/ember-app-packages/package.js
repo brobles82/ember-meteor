@@ -28,7 +28,7 @@ Package.on_use(function(api) {
     // You want to keep your data somewhere? How about MongoDB?
     'mongo-livedata',
     // You want some views? How about Handlebars-based templating?
-    'templating',
+    'ember-templating',
     // What, you want to call Handlebars.registerHandler? Sounds good to me.
     // 'handlebars',
     // Easy type assertions? check.
