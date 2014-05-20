@@ -1,0 +1,15 @@
+{
+  "name": "ember-data-latest",
+  "_cacheHeaders": {
+    "ETag": "\"251bed8614192576a2673176af5781b5\"",
+    "Last-Modified": "Sun, 26 Jan 2014 01:51:12 GMT",
+    "Content-Length": "281005",
+    "Content-Type": "text/javascript"
+  },
+  "_release": "e-tag:251bed861",
+  "main": "index.js",
+  "_source": "http://builds.emberjs.com/ember-data-latest.js",
+  "_target": "*",
+  "_originalSource": "http://builds.emberjs.com/ember-data-latest.js",
+  "_direct": true
+}
